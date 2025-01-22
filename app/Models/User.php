@@ -42,4 +42,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // UTENTE AMMINISTRATORE
+    public function canAccessFilament(): bool
+    {
+        return $this->is_admin;
+    }
 }
